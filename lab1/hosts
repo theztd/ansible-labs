@@ -1,0 +1,2 @@
+[aws]
+my-server ansible_ssh_host=3.249.158.65 ansible_user=root
