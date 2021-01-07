@@ -1,0 +1,33 @@
+---
+- name: HINT
+  debug:
+    msg: "domain: {{item.web_domain}} - root: {{item.web_root}}"
+  with_items: "{{ webs }}"
+
+# https://docs.ansible.com/ansible/2.3/apt_module.html
+- name: Update apt cache
+  apt:
+    update_cache: yes
+
+- name: Install nginx
+  apt:
+    name: nginx
+    state: present
+    # install_recommends: no   # only if wants to minimize installation size
+
+# https://docs.ansible.com/ansible/2.3/systemd_module.html
+- name: enable after start
+  systemd:
+    name: nginx
+    state: restarted
+    enabled: yes
+
+
+# https://docs.ansible.com/ansible/2.3/modules/template_module.html
+- name: deploy my page
+  template:
+    src: index.html.j2
+    dest: /var/www/html/index.html
+    mode: 0644
+    #backup: yes
+    #validate: "nginx -t %s"
