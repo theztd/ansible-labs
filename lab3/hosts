@@ -1,0 +1,6 @@
+[webs]
+web1.example.infra ansible_ssh_host=10.0.0.11 ansible_user=root
+web2.example.infra ansible_ssh_host=10.0.0.12 ansible_user=root
+
+[dbs]
+db1.example.infra ansible_ssh_host=10.0.0.51 ansible_user=root

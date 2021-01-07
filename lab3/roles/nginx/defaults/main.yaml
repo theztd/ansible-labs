@@ -1,0 +1,13 @@
+page_title: "Sem zadejte titulek stranky index.html"
+welcome_text: "Text na strance index.html"
+
+# Sem dejte domenu na ktere ma web poslouchat
+# web_domain:
+
+# konfigurace pro multiweb
+# webs:
+#   - web_domain: web1.check-this.link
+#     web_root: /var/www/web1
+#   - web_domain: web2.check-this.link
+#     web_root: /var/www/web2
+

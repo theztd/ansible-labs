@@ -1,0 +1,28 @@
+---
+- name: Configure Nginx and deploy my personal page
+  hosts: aws
+  vars:
+    page_title: "My personal page - change me"
+    welcome_text: |
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+      Aenean id metus id velit ullamcorper pulvinar. 
+      Nulla accumsan, elit sit amet varius semper, nulla mauris mollis quam, 
+      tempor suscipit diam nulla vel leo. 
+      Itaque earum rerum hic tenetur a sapiente delectus, 
+      ut aut reiciendis voluptatibus maiores alias consequatur 
+      aut perferendis doloribus asperiores repellat. 
+      Aliquam ante. Quisque tincidunt scelerisque libero. 
+      Curabitur vitae diam non enim vestibulum interdum. 
+      Fusce nibh. Nunc tincidunt ante vitae massa.
+      Donec quis nibh at felis congue commodo. 
+      Aliquam ornare wisi eu metus.
+
+    # Example for task 3
+    webs:
+    - web_domain: web1.check-this.link
+      web_root: /var/www/web1
+    - web_domain: web2.check-this.link
+      web_root: /var/www/web2
+
+  roles:
+  - nginx
